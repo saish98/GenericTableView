@@ -27,7 +27,7 @@ class BaseTableViewController: UITableViewController {
         let item = viewModel.items[indexPath.row]
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: item.reuseId) else {
-            fatalError("XXX Cell not found XXX")
+            fatalError("XXX Fatal error for cell not found at \(indexPath) XXX")
         }
         
         item.configure(cell: cell)

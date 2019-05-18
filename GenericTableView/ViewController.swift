@@ -11,12 +11,16 @@ import UIKit
 class ViewController: BaseTableViewController {
     
     override func viewDidLoad() {
+        
+        //1: Initialisation
         super.viewDidLoad()
         
-        super.tableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "UserCell")
-        super.tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
-        super.tableView.register(UINib(nibName: "ImageCell", bundle: nil), forCellReuseIdentifier: "ImageCell")
+        //2: Registration
+        self.tableView.registerCell(UserCell.self)
+        self.tableView.registerCell(MessageCell.self)
+        self.tableView.registerCell(ImageCell.self)
         
+        //3: Data Transmission
         self.viewModel = TableViewModel()
     }
     
